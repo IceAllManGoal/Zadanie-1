@@ -1,0 +1,189 @@
+:root{
+    --main-radius: 5px;
+    --main-padding: 5px;
+    --clr-primary: #1c1c1c;
+    --clr-gray: #37474f;
+    --clr-gray-light: #b0bec5;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    color: var(--clr-gray);
+    margin: 2rem;
+}
+
+.wrapper-grid{
+    display: grid;
+    grid-template-columns: repeat (auto-fit, 20rem);
+    justify-content: center;
+}
+
+.news{
+    overflow: hidden;
+    box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+    background-color: white;
+    text-align: center;
+    border-radius: 1rem;
+    position: relative;
+    margin: 0.5rem;
+}
+
+.banner-img{
+    position: absolute;
+    background-image: url(https://static.zerochan.net/Haikyuu%21%21.full.1460591.jpg);
+    height: 10rem;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-img{
+    width: 10rem;
+    clip-path: circle(60px at center);
+    margin-top: 4.5rem;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.description{
+    margin: 1rem 2rem;
+    font-size: 0.9rem;
+}
+
+.btn{
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 1rem;
+    background-color: var(--clr-primary); ;
+}
+
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.2fr 0.2fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas: 
+        "header header header header"
+        "nav nav nav nav"
+        "sidebar main main main"
+        "sidebar content1 content2 content3"
+        "sidebar footer footer footer";
+    grid-gap: 0.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #004d40;
+    text-align: center;
+}
+
+header{
+    background: #c7c7c7;
+    grid-area: header;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.nav{
+    background: #c7c7c7;
+    grid-area: nav;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+    display: flex; 
+}
+
+.nav ul li{
+    margin: 10px;
+    margin-right: 35px;
+    list-style: none;
+    float: left;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #004d40;
+    display: block;
+}
+
+.nav ul::after{
+    display: block;
+    content: ' ';
+    clear: both;
+    float: none;
+}
+
+.nav ul li:last-child{
+    margin-right: 0;
+}
+
+main{
+    background: #c7c7c7;
+    grid-area: main;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+aside{
+    background: #c7c7c7;
+    grid-area: sidebar;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.content1{
+    background: #c7c7c7;
+    grid-area: content1;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.content2{
+    background: #c7c7c7;
+    grid-area: content2;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+.content3{
+    background: #c7c7c7;
+    grid-area: content3;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+footer{
+    background: #c7c7c7;
+    grid-area: footer;
+    border-radius: var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px){
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+        grid-template-areas: 
+        "header"
+        "sidebar"
+        "main"
+        "content1"
+        "content2"
+        "content3"
+        "footer";
+    }
+}
+img{
+    height: 200px;
+}
